@@ -5,7 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup, Polygon } from "react-leaflet";
 import { statesData } from "./../src/Leaflet/data";
 
 function App() {
-  const position = [51.505, -0.09];
+  const position = [21.03333, 105.85];
   return (
     <>
       <SearchAppBar />
@@ -17,7 +17,7 @@ function App() {
       >
         <TileLayer
           attribution='&copy; <a href="https://www.maptiler.com/">MapTiler</a> &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://api.maptiler.com/maps/openstreetmap/256/{z}/{x}/{y}.jpg?key=REACT_APP_MAP_KEY"
+          url="https://api.maptiler.com/maps/openstreetmap/256/{z}/{x}/{y}@2x.jpg?key=El1KKGkzSldLWtJQo9IS"
         />
         {statesData.features.map((state) => {
           const coordinates = state.geometry.coordinates[0].map((item) => [
@@ -65,7 +65,7 @@ function App() {
         })}
         <Marker position={position}>
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            This is <br /> my hometown
           </Popup>
         </Marker>
       </MapContainer>
