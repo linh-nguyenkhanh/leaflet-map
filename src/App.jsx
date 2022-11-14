@@ -6,6 +6,7 @@ import { statesData } from "./../src/Leaflet/data";
 
 function App() {
   const position = [21.03333, 105.85];
+
   return (
     <>
       <SearchAppBar />
@@ -63,6 +64,7 @@ function App() {
             />
           );
         })}
+
         <Marker position={position}>
           <Popup>
             This is <br /> my hometown
