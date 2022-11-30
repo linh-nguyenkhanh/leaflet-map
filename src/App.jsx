@@ -3,17 +3,17 @@ import SearchAppBar from "./components/Header/SearchAppBar";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup, Polygon } from "react-leaflet";
 import { statesData } from "./../src/Leaflet/data";
-
+import { useMap } from "./Leaflet/CurrentLocation";
 function App() {
-  const position = [21.03333, 105.85];
+  const { position } = useMap();
 
   return (
     <>
       <SearchAppBar />
       <MapContainer
         center={position}
-        zoom={13}
-        scrollWheelZoom={false}
+        zoom={4.5}
+        scrollWheelZoom={true}
         style={{ width: "100vw", height: "100vh" }}
       >
         <TileLayer
@@ -29,7 +29,7 @@ function App() {
             <Polygon
               key={state.id}
               pathOptions={{
-                fillColor: "#FD8D3C",
+                fillColor: "#fd893c",
                 fillOpacity: 0.7,
                 weight: 2,
                 opacity: 1,
